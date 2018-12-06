@@ -1,0 +1,27 @@
+---
+title: "pratice2"
+output: html_document
+---
+
+```{r}
+library(readr)
+library(stringr)
+library(lubridate)
+TyphoonData <- read_csv("https://raw.githubusercontent.com/GaryLKL/course-programming-for-ds-Quiz/master/TyphoonData.csv", col_types = cols(.default = col_character()))
+Year <- TyphoonData$年份
+year <- as.integer(Year)
+"民國年" <- year-1911
+民國年
+```
+
+```{r}
+republic_of_china_year<- as.character(民國年)
+republic_of_china_year2 <- str_c ("民國",republic_of_china_year,"年")
+```
+
+```{r}
+Time <- TyphoonData$發布警報時間
+month <- str_sub(Time,6,7)
+table(month)
+```
+

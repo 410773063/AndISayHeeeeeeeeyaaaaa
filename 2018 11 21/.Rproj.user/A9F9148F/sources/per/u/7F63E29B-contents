@@ -1,0 +1,27 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+
+```{r}
+subsample_團隊活動 <- str_detect(subsample$課外活動,"團隊活動")
+as.numeric(subsample_團隊活動)
+sum(subsample_團隊活動,1)
+sum(subsample_團隊活動,0)
+有參加比例 <- 30/59
+沒有參加比例 <- 29/59
+```
+```{r}
+table(classSurvey$性別)
+女性比例 <- 43/60
+男性比例 <- 17/60
+```
+
+```{r}
+團隊活動 <- str_detect(classSurvey$課外活動,"團隊活動")
+classSurvey$課外活動
+團隊活動
+sum(團隊活動,1)
+```
+

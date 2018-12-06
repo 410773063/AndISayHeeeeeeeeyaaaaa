@@ -1,0 +1,165 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r}
+library(readr); library(dplyr); library(stringr); library(lubridate)
+```
+
+```{r}
+classSurvey <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/classSurvey.csv")
+hwGrades <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/hwGrades.csv")
+```
+
+```{r}
+## ----ans1b1--------------------------------------------------------------
+"sex" <- factor(classSurvey$性別)
+```
+
+```{r}
+## ----ans1b2--------------------------------------------------------------
+學號 <- str_sub(hwGrades$學號,2,4)
+```
+
+```{r}
+經一B學生 <- c("小花","小咪","小李")
+飲料店工讀生 <- c("陳小明","小李")
+飲料店工讀生 %in% 經一B學生
+```
+
+```{r}
+## ----ans1b3--------------------------------------------------------------
+hwGrades$學號 %in% classSurvey$學號
+```
+
+```{r}
+## ----ans1b4--------------------------------------------------------------
+which(classSurvey$學號=="4104d245c7")
+```
+
+```{r}
+## ----ans1b5--------------------------------------------------------------
+which(hwGrades$學號=="4104d245c7")-> loc
+hwGrades[loc,]$Exercise3
+```
+
+```{r}
+## ----ans11---------------------------------------------------------------
+classSurvey$性別 %>% table() %>%
+  {./sum(.)} -> tbSex
+tbSex
+```
+
+```{r}
+## ----ans12---------------------------------------------------------------
+classSurvey$課外活動 %>%
+  str_detect("團隊活動") -> hasGroupActivity
+hasGroupActivity %>%  sum
+```
+
+```{r}
+## ----ans131--------------------------------------------------------------
+isFemale <- classSurvey$性別=="女"
+```
+
+```{r}
+## ----ans132--------------------------------------------------------------
+classSurvey[isFemale,]->subsample
+```
+
+```{r}
+## ----ans133--------------------------------------------------------------
+subsample$課外活動 %>% #只選女性看她們的課外活動
+  str_detect("團隊活動") %>% #找出有團隊活動的
+  table(.)/sum(isFemale)->tbFemale
+tbFemale
+```
+
+```{r}
+aaa <- c("a","b",NA)
+is.na(aaa)
+```
+
+```{r}
+## ----ans14---------------------------------------------------------------
+hwGrades %>%
+  select(c(2:4)) %>%
+  mutate_all(
+    funs(
+      !is.na(.)
+    )
+  ) -> hwGrades2
+hwGrades2 %>% rowSums() -> hwGrades$交作業次數
+hwGrades
+```
+
+```{r}
+## ----ans15---------------------------------------------------------------
+hwGrades %>%
+  select(hw1,hw2,Exercise3) %>%
+  {rowSums(.,na.rm=T)} -> 總成績 
+hwGrades$平均成績 <- 總成績/3
+hwGrades
+```
+
+```{r}
+## ----ans16---------------------------------------------------------------
+hwGrades$學號 %in% classSurvey$學號 -> isSurveyed
+hwGradesSubsample <- hwGrades[isSurveyed,]
+```
+
+```{r}
+## ----ans17---------------------------------------------------------------
+classSurvey$學號[isFemale] -> 女性學號
+hwGradesSubsample$女性 <- hwGradesSubsample$學號 %in% 女性學號
+hwGradesSubsample
+```
+
+```{r}
+## ----ans18---------------------------------------------------------------
+hwGradesSubsample$平均成績[(hwGradesSubsample$女性==F)] %>%
+  mean
+```
+```{r}
+## ----ans19---------------------------------------------------------------
+classSurvey$學號[hasGroupActivity] -> 有團隊的學號
+hwGradesSubsample$有團活 <- hwGradesSubsample$學號 %in% 有團隊的學號
+hwGradesSubsample$平均成績[(hwGradesSubsample$女性==T & hwGradesSubsample$有團活==T)] %>%
+  mean -> meanGradeFemaleWithAct
+meanGradeFemaleWithAct
+```
+
+```{r}
+hwSubmit <- read.csv("https://raw.githubusercontent.com/tpemartin/github-data/master/hwSubmit.csv")
+```
+
+```{r}
+## ----ans21---------------------------------------------------------------
+hwSubmit %>%
+  mutate(
+    Timestamp=ymd_hms(Timestamp),
+    Timestamp=with_tz(Timestamp,tzone="Asia/Taipei"),
+    學號=as.character(學號)
+  ) -> hwSubmit
+```
+
+```{r}
+## ----ans22---------------------------------------------------------------
+deadline3 <- ymd_hms("2018-11-06 00:00:00",tz="Asia/Taipei")
+hwSubmit3 <- hwSubmit[hwSubmit$作業代碼=="Exercise3",]
+hwSubmit3 %>%
+  mutate(
+    截止時差=difftime(deadline3,Timestamp,units="hours")
+  ) -> 
+  hwSubmit3
+```
+
+```{r}
+## ----ans23---------------------------------------------------------------
+hwSubmit3$截止時差[hwSubmit3$女性==T] %>% mean -> FemaleTime
+hwSubmit3$截止時差[hwSubmit3$女性==F] %>% mean -> MaleTime
+FemaleTime-MaleTime -> dftime1
+dftime1
+```
+

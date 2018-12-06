@@ -1,0 +1,1 @@
+{"frames":[],"message":"Error in read_csv(\"https://raw.githubusercontent.com/tpemartin/course-107-1-programming-for-data-science/master/data/student.csv\") : \n  could not find function \"read_csv\"\n"}

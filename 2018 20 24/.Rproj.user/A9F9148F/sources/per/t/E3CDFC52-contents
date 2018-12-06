@@ -1,0 +1,39 @@
+---
+title: "2018 10 24"
+output: html_document
+---
+
+```{r}
+StuDF <- data.frame(
+  StuID=c(1,2,3,4,5),
+  name=c("小明","大雄","胖虎","小新","大白"),
+  score=c(80,60,90,70,50)
+  )
+StuDF 
+```
+
+```{r}
+names(StuDF) 
+colnames(StuDF)
+rownames(StuDF)
+```
+
+```{r}
+StuDF[1,2]
+StuDF[,2]
+StuDF[1,]
+StuDF[c(1,4),]
+StuDF[c(1,4),c(2,3)]
+
+```
+
+```{r}
+StuDF[c(1,4),]
+StuDF[-c(1,4),]
+```
+
+```{r}
+StuDF[c(T,F,F,F,F),c(F,T,F)]
+StuDF[c(T,F,F,T,F),]
+```
+

@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1543394431915.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "2B307FD",
+    "lastKnownWriteTime" : 3419473789575321445,
+    "last_content_update" : 1543394431915,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "407AEF15",
+        "caption" : "IMDBData",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=IMDBData&cache_key=407AEF15",
+        "displayedObservations" : 7201,
+        "environment" : "",
+        "object" : "IMDBData",
+        "preview" : 0,
+        "totalObservations" : 7201,
+        "variables" : 6
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

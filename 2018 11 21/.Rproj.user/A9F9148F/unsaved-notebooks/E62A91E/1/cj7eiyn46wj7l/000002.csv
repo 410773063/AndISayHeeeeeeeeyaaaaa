@@ -1,0 +1,13 @@
+"0","which(hwGrades$學號==""4104d245c7"")-> loc"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","hwGrades[loc,]$Exercise3"
+"1","[1]"
+"1"," 6.666667"
+"1","
+"

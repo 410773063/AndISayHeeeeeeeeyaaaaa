@@ -1,0 +1,19 @@
+"0","select(libraryData$書籍名稱)"
+"2","Error in UseMethod(""select_"") : 
+  no applicable method for 'select_' applied to an object of class ""character""
+"
+"2","In addition: "
+"2","Warning messages:
+"
+"2","1: "
+"2","In grepl(""|||"", what, fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"2","2: "
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"

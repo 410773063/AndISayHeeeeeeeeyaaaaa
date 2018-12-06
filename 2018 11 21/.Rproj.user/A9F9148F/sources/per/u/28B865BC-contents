@@ -1,0 +1,10 @@
+---
+title: "practice"
+output: html_document
+---
+
+```{r}
+library(readr)
+TyphoonData <- read_csv("https://raw.githubusercontent.com/GaryLKL/course-programming-for-ds-Quiz/master/TyphoonData.csv")
+```
+

@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1540739528870.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "132B7B09",
+    "lastKnownWriteTime" : 27303489359118433,
+    "last_content_update" : 1540739528870,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "id" : "7c98192270364f45bcaa5211f26e63d0",
+        "name" : "just_word",
+        "title" : "just_word"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "object_explorer"
+}

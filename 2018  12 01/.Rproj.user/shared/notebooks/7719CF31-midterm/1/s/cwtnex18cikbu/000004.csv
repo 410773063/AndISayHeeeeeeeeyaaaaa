@@ -1,0 +1,16 @@
+"0","不是阿邊的他們 <- classSurvey$學號[團隊活動]"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","I_need_dataframe_now$非邊人類 <- I_need_dataframe_now$學號 %in% 不是阿邊的他們"
+"0","I_need_dataframe_now$非邊女子平均成績 <-"
+"0","  mean(I_need_dataframe_now$平均成績[(I_need_dataframe_now$非邊人類==T& I_need_dataframe_now$女性==T)])"
+"0","I_need_dataframe_now$非邊女子平均成績[1]"
+"1","[1]"
+"1"," 0.2833333"
+"1","
+"

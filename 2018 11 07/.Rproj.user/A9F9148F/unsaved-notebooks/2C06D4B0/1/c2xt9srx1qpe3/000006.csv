@@ -1,0 +1,9 @@
+"0","republic_of_china_year<- as.character(民國年)"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","republic_of_china_year2 <- str_c (""民國"",republic_of_china_year,""年"")"

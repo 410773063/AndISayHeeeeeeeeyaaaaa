@@ -1,0 +1,10 @@
+"0","女生徒學號 <- classSurvey$學號[女的]"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","I_need_dataframe_now$女性 <- I_need_dataframe_now$學號 %in% 女生徒學號"
+"0","I_need_dataframe_now"

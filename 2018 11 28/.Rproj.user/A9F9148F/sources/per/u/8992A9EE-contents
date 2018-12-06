@@ -1,0 +1,25 @@
+---
+title: "2018 11 28"
+output: html_document
+---
+```{r}
+library(readr)
+IMDBData <- read_csv("https://raw.githubusercontent.com/GaryLKL/course-programming-for-ds-Quiz/master/imdb_movies.csv")
+head(IMDBData)
+dim(IMDBData)
+ncol(IMDBData)
+nrow(IMDBData)
+names(IMDBData)
+colnames(IMDBData)
+summary(IMDBData$片長)
+```
+```{r}
+IMDBData[IMDBData$片名=="Ant-Man",c("排名","片長","類型")]
+```
+```{r}
+table(IMDBData$年份)
+```
+```{r}
+min(IMDBData$類型)
+```
+

@@ -1,0 +1,17 @@
+"0","library(readr)"
+"0","TyphoonData <- read_csv(""https://raw.githubusercontent.com/GaryLKL/course-programming-for-ds-Quiz/master/TyphoonData.csv"")"
+"2","Parsed with column specification:
+cols(
+  年份 = col_integer(),
+  中文名稱 = col_character(),
+  英文名稱 = col_character(),
+  近臺強度 = col_character(),
+  `最低氣壓(hPa)` = col_character(),
+  近臺 = col_character(),
+  `最大風速(m/s)` = col_character(),
+  `7級風暴風半徑(km)` = col_character(),
+  `10級風暴風半徑(km)` = col_character(),
+  發布警報時間 = col_datetime(format = """"),
+  解除警報時間 = col_datetime(format = """")
+)
+"
