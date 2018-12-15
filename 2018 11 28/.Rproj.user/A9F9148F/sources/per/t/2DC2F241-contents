@@ -4,9 +4,9 @@ output:
   html_notebook: default
 date: '2018-11-14'
 params:
-  birthday: 你的出生西元年月日，用YYYY-DD-MM格式
-  id: 你學號
-  name: 你的名字
+  birthday: 2000-02-19
+  id: 410773063
+  name: 蕭羽辰
 ---
 # 電子書
 
@@ -195,17 +195,35 @@ hwSubmit <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/ma
 ## 2.1 class檢查
 請將**hwSubmit**的所有變數調整成正確的class，其中**Timestamp**為UTC時區，請將它轉成台灣Asia/Taipei時區。（最後一行請打hwSubmit, 程式將檢查裡面所有變數的class是否正確。）
 ```{r ans21}
+class(hwSubmit$Timestamp)
+class(hwSubmit$學號)
+class(hwSubmit$作業代碼)
+class(hwSubmit$女性)
+hwSubmit$Timestamp <- ymd_hms(hwSubmit$Timestamp,tz="Asia/Taipei")
+hwSubmit
 ```
 
 ## 2.2 交作業時間: Exercise3
 取出**hwSubmit**中**作業代碼**為Exercise3的子樣本，稱它為**hwSubmit3**。Exercise3的截止時日是台灣時間2018-11-06 00:00:00，請計算每個人該作業離截止時日還有多少小時。（請於**hwSubmit3**中創一個新變數**截止時差**存入每個人的時差小時值，程式最後一行請打hwSubmit3，程式將檢查裡面的**截止時差**是否正確。）(hint: `difftime()`)
 ```{r ans22}
+截止日<- ymd_hms("2018-11-06 00:00:00",tz="Asia/Taipei")
+hwSubmit3 <- hwSubmit[hwSubmit$作業代碼=="Exercise3",]
+hwSubmit3$截止時差 <- difftime(截止日,hwSubmit3$Timestamp,units="hours")
+hwSubmit3
 ```
 
 ## 2.3 性別差異
 **hwSubmit3**中, 女性「平均」截止時差比男性多多少小時呢？（最後一行答案必須女生減去男性的值。）
 
 ```{r ans23}
+女性時差 <- hwSubmit3$截止時差[hwSubmit3$女性==T]
+女性均時差 <- mean(女性時差)
+女性均時差
+男性時差 <- hwSubmit3$截止時差[hwSubmit3$女性==F]
+男性均時差 <- mean(男性時差)
+男性均時差
+平均時間差 <- 女性均時差-男性均時差
+平均時間差
 ```
 
 ```{r ans23-1}
