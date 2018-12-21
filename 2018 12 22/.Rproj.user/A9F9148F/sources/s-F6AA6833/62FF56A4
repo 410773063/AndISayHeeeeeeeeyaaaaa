@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1545409417842.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "62FF56A4",
+    "lastKnownWriteTime" : 5292976843906638626,
+    "last_content_update" : 1545409417842,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "7A834241",
+        "caption" : "hwGrades",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=hwGrades&cache_key=7A834241",
+        "displayedObservations" : "61",
+        "environment" : "",
+        "object" : "hwGrades",
+        "preview" : "0",
+        "totalObservations" : "61",
+        "variables" : "14"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

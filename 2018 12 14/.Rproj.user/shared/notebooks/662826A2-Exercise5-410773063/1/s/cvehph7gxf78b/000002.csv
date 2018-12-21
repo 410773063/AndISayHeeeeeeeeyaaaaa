@@ -1,0 +1,12 @@
+"0","mutate(all_edfeQ7fb8,"
+"0","       及格=all_edfeQ7fb8$學期成績>=60) -> all_edfeQ7fb8"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
+"0","summarise(all_edfeQ7fb8,"
+"0","          總修習學分=sum(all_edfeQ7fb8$學分數),"
+"0","          總實得學分數=sum(all_edfeQ7fb8$學分數[all_edfeQ7fb8$及格]))"

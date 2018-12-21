@@ -1,0 +1,11 @@
+"0","subsample$學期成績 >= 60 -> subsample$及格 # 1"
+"2","Error: object 'subsample' not found
+"
+"2","In addition: "
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"
