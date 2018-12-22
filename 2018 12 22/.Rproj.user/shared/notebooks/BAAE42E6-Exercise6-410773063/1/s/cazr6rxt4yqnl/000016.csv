@@ -1,0 +1,12 @@
+"0","hwGrades%>%"
+"0","  group_by(性別)%>%"
+"0","  summarise("
+"0","    平均作業平均成績= sum(作業平均成績)/n()"
+"0","  ) ->平均作業平均成績"
+"2","Warning message:
+"
+"2","In strsplit(code, ""\n"", fixed = TRUE) :"
+"2","
+ "
+"2"," input string 1 is invalid in this locale
+"

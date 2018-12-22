@@ -12,15 +12,15 @@
     "path" : null,
     "project_path" : null,
     "properties" : {
-        "cacheKey" : "7A834241",
+        "cacheKey" : "1CEB79BE",
         "caption" : "hwGrades",
-        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=hwGrades&cache_key=7A834241",
-        "displayedObservations" : "61",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=hwGrades&cache_key=1CEB79BE",
+        "displayedObservations" : "77",
         "environment" : "",
         "object" : "hwGrades",
         "preview" : "0",
-        "totalObservations" : "61",
-        "variables" : "14"
+        "totalObservations" : "77",
+        "variables" : "15"
     },
     "relative_order" : 3,
     "source_on_save" : false,

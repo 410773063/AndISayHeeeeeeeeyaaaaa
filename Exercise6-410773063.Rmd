@@ -133,8 +133,8 @@ band_members %>%
 請以hwGrades為「左手邊」data frame把classSurvey的資訊合併進來。（結果請回存hwGrades）
 
 ```{r ans15}
-classSurvey%>%
-  left_join(hwGrades,by=c("學號")) -> hwGrades
+hwGrades%>%
+  left_join(classSurvey,by=c("學號")) -> hwGrades
 ```
 
 ## 1.6 個人作業平均成績
@@ -152,7 +152,6 @@ hwGrades%>%
 延續上題的hwGrades，請使用`group_by()`及`summarise()`來計算男/女性的**平均作業平均成績**。(結果還會出現性別NA組的平均)
 
 ```{r ans17}
-hwGrades%>%mutate_if(is.numeric,funs(na2zero(.))) ->hwGrades
 hwGrades%>%
   group_by(性別)%>%
   summarise(
